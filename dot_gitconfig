@@ -25,3 +25,5 @@ attributesfile = ~/.gitattributes
 path = .gitconfig-privat
 [includeIf "gitdir:~/Documents/Privat/"]
 path = .gitconfig-privat
+[includeIf "gitdir:~/.local/share/"]
+path = .gitconfig-privat
