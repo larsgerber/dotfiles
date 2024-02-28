@@ -1,0 +1,40 @@
+#Include config-bedag
+
+## Global Parameters
+AddKeysToAgent yes
+Compression yes
+ForwardAgent yes
+IdentitiesOnly yes
+IdentityFile ~/.ssh/id_ed25519_bedag
+
+# Jumphosts segment: ci
+Host ci ci-be
+User rdrj@cisvc.local
+Hostname sshgwcibe.svc.bedag.ch
+
+Host ci-wet
+User rdrj@cisvc.local
+Hostname sshgwciwe.svc.bedag.ch
+
+# Jumphosts segment: co
+Host co co-be
+User rdrj@ad.bedag.ch
+Hostname sshgwcobe.svc.bedag.ch
+
+Host co-wet
+User rdrj@ad.bedag.ch
+Hostname sshgwcowe.svc.bedag.ch
+
+# Jumphosts segment: kb
+Host kb kb-be
+User rdrj@kbsvc.local
+Hostname sshgwkbbe.svc.bedag.ch
+
+Host kb-wet
+User rdrj@kbsvc.local
+Hostname sshgwkbwe.svc.bedag.ch
+
+# ProxyJump for ssh://git@git.bedag.cloud:8989
+Host git.bedag.cloud
+Hostname git.bedag.cloud
+ProxyJump co

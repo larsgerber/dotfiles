@@ -1,0 +1,103 @@
+# ~/.config/starship.toml
+
+# Inserts a blank line between shell prompts
+add_newline = true 
+
+# Change command timeout from 500 to 1000 ms
+command_timeout = 1000
+
+# Shows the username
+[username]
+style_user = "white"
+style_root = "white"
+format = "[$user]($style) "
+show_always = true
+disabled = true
+
+# Shows the hostname
+[hostname]
+ssh_only = false
+format = "on [$hostname](bold yellow) "
+disabled = true
+
+# Shows the directorys
+[directory]
+truncation_length = 1
+truncation_symbol = "…/"
+home_symbol = "󰋜 ~"
+read_only_style = "197"
+read_only = "  "
+format = "at [$path]($style)[$read_only]($read_only_style) "
+disabled = false
+
+# Styles git branch output
+[git_branch]
+symbol = "󰊢 "
+format = "via [$symbol$branch]($style) "
+truncation_length = 20
+truncation_symbol = "…/"
+style = "bold green"
+disabled = false
+
+# Styles git commit output
+[git_commit]
+commit_hash_length = 4
+tag_symbol = "󰓹 "
+disabled = false
+
+# Styles git status output
+[git_status]
+format = '[\($all_status$ahead_behind\)]($style) '
+style = "bold green"
+conflicted = "🏳"
+up_to_date = "✓"
+untracked = " "
+ahead = "⇡${count}"
+diverged = "⇕⇡${ahead_count}⇣${behind_count}"
+behind = "⇣${count}"
+stashed = "󰏖 "
+modified = " "
+staged = '[++\($count\)](green)'
+renamed = "󰖷 "
+deleted = " "
+disabled = false
+
+# Shows current Ansible virtual env
+[python]
+pyenv_version_name = false
+disabled = false
+
+# Shows current Docker context
+[docker_context]
+format = "via [ $context](bold blue) "
+disabled = false
+
+# Shows current Helm version
+[helm]
+format = "via [ $version](bold purple) "
+
+# Shows current NodeJS version
+[nodejs]
+format = "via [󰎙 $version](bold green) "
+disabled = true
+
+# Shows current Ruby version
+[ruby]
+format = "via [ $version]($style) "
+disabled = true
+
+# Shows current package version
+[package]
+format = '[ \[$env\]]($style) '
+disabled = true
+
+# Shows current conda environment
+[conda]
+format = "[$environment](green) "
+ignore_base = true
+disabled = false
+
+# Shows current cluster and namespace
+[kubernetes]
+format = 'via [󱃾 $context\($namespace\)](bold purple) '
+disabled = false
