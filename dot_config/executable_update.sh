@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# Stolen from https://github.com/michaelfriderich :D
+
 echo ""
 echo "=== Brew ==="
 echo ""
