@@ -112,5 +112,6 @@
     "disable-linters": ["resource-limits"],
     "vs-kubernetes.crd-code-completion": "enabled"
   },
-  "git.openRepositoryInParentFolders": "never"
+  "git.openRepositoryInParentFolders": "never",
+  "editor.stickyScroll.enabled": true
 }
