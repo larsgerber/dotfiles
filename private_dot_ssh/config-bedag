@@ -6,6 +6,7 @@ Compression yes
 ForwardAgent yes
 IdentitiesOnly yes
 IdentityFile ~/.ssh/id_ed25519_bedag
+StrictHostKeyChecking accept-new
 
 # Jumphosts segment: ci
 Host ci ci-be
@@ -33,6 +34,15 @@ Hostname sshgwkbbe.svc.bedag.ch
 Host kb-wet
 User rdrj@kbsvc.local
 Hostname sshgwkbwe.svc.bedag.ch
+
+# Jumphosts segment: mgmt
+Host mgmt mgmt-be
+User rdrj@mgmt.local
+Hostname admingwbe.mgmt.local
+
+Host mgmt-wet
+User rdrj@mgmt.local
+Hostname admingwwe.mgmt.local
 
 # ProxyJump for ssh://git@git.bedag.cloud:8989
 Host git.bedag.cloud
