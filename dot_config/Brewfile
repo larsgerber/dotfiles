@@ -56,6 +56,7 @@ cask "middleclick"
 cask "obsidian"
 cask "pika"
 cask "podman-desktop"
+cask "proxifier"
 cask "raycast"
 cask "rectangle"
 cask "setapp"
@@ -65,4 +66,5 @@ cask "vscodium"
 mas "Amphetamine", id: 937984704
 mas "Bitwarden", id: 1352778147
 mas "Citrix Secure Access", id: 1338991513
+mas "Core Tunnel", id: 1354318707
 mas "WireGuard", id: 1451685025
