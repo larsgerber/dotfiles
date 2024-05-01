@@ -8,7 +8,7 @@ echo ""
 
 brew update
 brew outdated
-brew outdated --cask
+brew outdated --cask --greedy
 brew upgrade
 brew upgrade --cask --greedy
 brew cleanup
