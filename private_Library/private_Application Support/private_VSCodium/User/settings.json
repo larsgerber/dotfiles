@@ -1,0 +1,119 @@
+{
+  // open json editor for settings
+  "workbench.settings.editor": "json",
+  // Theme
+  "workbench.colorTheme": "Catppuccin Mocha",
+  "workbench.iconTheme": "material-icon-theme",
+  // Change font
+  "editor.fontFamily": "MesloLGS Nerd Font Mono",
+  "scm.inputFontFamily": "MesloLGS Nerd Font Mono",
+  "terminal.integrated.fontFamily": "MesloLGS Nerd Font Mono",
+  "chat.editor.fontFamily": "MesloLGS Nerd Font Mono",
+  "debug.console.fontFamily": "MesloLGS Nerd Font Mono",
+  "editor.codeLensFontFamily": "MesloLGS Nerd Font Mono",
+  "notebook.output.fontFamily": "MesloLGS Nerd Font Mono",
+  "markdown.preview.fontFamily": "MesloLGS Nerd Font Mono",
+  "editor.inlayHints.fontFamily": "MesloLGS Nerd Font Mono",
+  // Font size
+  "editor.fontSize": 15,
+  "terminal.integrated.fontSize": 15,
+  // ui
+  "editor.minimap.enabled": true,
+  "window.commandCenter": false,
+  "editor.scrollbar.vertical": "auto",
+  "window.titleBarStyle": "custom",
+  "editor.scrollbar.horizontal": "auto",
+  // Toggle excluded files
+  "files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true,
+    "**/Thumbs.db": true,
+    "**/node_modules": true,
+    "**/.next": true,
+    "**/.husky": true,
+    "**/drizzle": true,
+    "**/dist": true,
+    "**/.todo.md": true,
+    "**/.vscode": true,
+    "**/.eslintrc.cjs": true,
+    "**/.editorconfig": true,
+    "**/.gitignore": true,
+    "**/.lintstagedrc.mjs": true,
+    "**/.markdownlint.json": true,
+    "**/.markdownlintignore": true,
+    "**/.prettierignore": true,
+    "**/bun.lockb": true,
+    "**/cspell.json": true,
+    "**/package-lock.json": true,
+    "**/pnpm-lock.yaml": true,
+    "**/next-env.d.ts": true,
+    "**/postcss.config.cjs": true,
+    "**/prettier.config.js": true,
+    "**/next.config.js": true,
+    "**/tailwind.config.ts": true,
+    "**/drizzle.config.ts": true,
+    "**/migrate.ts": true,
+    "**/.env.example": true,
+    "**/.pre-commit-config.yaml": true,
+    "**/.yamllint": true,
+    "**/.ansible-lint": true,
+    "**/ansible.cfg": true,
+    "**/requirements.yml": true,
+    "**/LICENSE": true,
+    "**/CODEOWNERS": true,
+    "**/Makefile": true
+  },
+  // Misc
+  "files.autoSave": "afterDelay",
+  "explorer.compactFolders": false,
+  "explorer.confirmDelete": false,
+  "editor.tabSize": 2,
+  "editor.linkedEditing": true,
+  "breadcrumbs.filePath": "off",
+  "files.trimTrailingWhitespace": true,
+  "[markdown]": {
+    "files.trimTrailingWhitespace": false,
+    "editor.defaultFormatter": "DavidAnson.vscode-markdownlint"
+  },
+  "editor.bracketPairColorization.enabled": true,
+  "editor.guides.bracketPairs": true,
+  "editor.unicodeHighlight.invisibleCharacters": true,
+  "window.zoomLevel": 1,
+  "files.associations": {
+    "*.river": "hcl",
+    "inventory": "shellscript",
+    ".env": "shellscript",
+    "config-bedag": "shellscript",
+    "config": "shellscript"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "extensions.ignoreRecommendations": true,
+  "redhat.telemetry.enabled": false,
+  "[yaml]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "workbench.startupEditor": "none",
+  "security.workspace.trust.untrustedFiles": "open",
+  "editor.formatOnSave": true,
+  "github.copilot.enable": {
+    "*": false,
+    "plaintext": false,
+    "markdown": false,
+    "scminput": false
+  },
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "explorer.confirmDragAndDrop": false,
+  "vs-kubernetes": {
+    "disable-linters": ["resource-limits"],
+    "vs-kubernetes.crd-code-completion": "enabled"
+  },
+  "git.openRepositoryInParentFolders": "never",
+  "editor.stickyScroll.enabled": true
+}

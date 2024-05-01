@@ -1,0 +1,29 @@
+[color]
+branch = auto
+interactive = auto
+status = auto
+diff = auto
+[credential]
+helper = cache --timeout 28800
+[init]
+defaultBranch = main
+[user]
+email = lars.gerber@bedag.ch
+name = Lars Gerber
+signingkey = 82303568958AF6D0
+[url "git@git.mgmtbi.ch:"]
+insteadOf = https://git.mgmtbi.ch/
+[url "git@git.bedag.cloud:"]
+insteadOf = https://git.bedag.cloud/
+[commit]
+gpgsign = true
+[diff "dyff"]
+command = "dyff_between() { dyff --color on between --omit-header \"$2\" \"$5\"; }; dyff_between"
+[core]
+attributesfile = ~/.gitattributes
+[includeIf "gitdir:~/Library/"]
+path = .gitconfig-privat
+[includeIf "gitdir:~/Documents/Privat/"]
+path = .gitconfig-privat
+[includeIf "gitdir:~/.local/share/"]
+path = .gitconfig-privat

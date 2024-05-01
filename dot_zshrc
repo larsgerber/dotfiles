@@ -1,0 +1,129 @@
+# ~/.zshrc
+
+# Path to your oh-my-zsh installation.
+export ZSH="$HOME/.oh-my-zsh"
+
+# Uncomment the following line to display red dots whilst waiting for completion.
+# Caution: this setting can cause issues with multiline prompts (zsh 5.7.1 and newer seem to work)
+# See https://github.com/ohmyzsh/ohmyzsh/issues/5765
+COMPLETION_WAITING_DOTS="true"
+
+# Uncomment the following line if you want to change the command execution time
+# stamp shown in the history command output.
+# You can set one of the optional three formats:
+# "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
+# or set a custom format using the strftime function format specifications,
+# see 'man strftime' for details.
+HIST_STAMPS="yyyy-mm-dd"
+
+# Which plugins would you like to load?
+# Standard plugins can be found in $ZSH/plugins/
+# Custom plugins may be added to $ZSH_CUSTOM/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+# Add wisely, as too many plugins slow down shell startup.
+plugins=(
+  aliases
+  dotenv
+  git
+  brew
+  podman
+  kubecolor
+  kubectl
+  kind
+  ansible
+  helm
+  zsh-syntax-highlighting
+  zsh-autosuggestions
+  zsh-completions
+  alias-tips
+  encode64
+  tmux
+  vscode
+  starship
+  history
+  chezmoi
+  subst
+  fzf
+)
+
+# -------------------------------------------------------------------
+# Aliases
+# -------------------------------------------------------------------
+
+alias gitstatusall="find . -maxdepth 1 -mindepth 1 -type d -exec sh -c '(echo {} && cd {} && git status -s && echo)' \;"
+alias gitpullall="find . -maxdepth 1 -mindepth 1 -type d -exec sh -c '(echo {} && cd {} && git pull && echo)' \;"
+alias zshconfig="vsc ~/.zshrc"
+alias ohmyzsh="vsc ~/.oh-my-zsh"
+alias moi=chezmoi
+alias kx='kubectx'
+alias kn='kubens'
+alias yh=yq
+alias watch='KUBECOLOR_FORCE_COLORS=true watch --color '
+
+# -------------------------------------------------------------------
+# Variables
+# -------------------------------------------------------------------
+
+export EDITOR="vim"
+export VSCODE=codium
+export KUBE_EDITOR="codium --wait"
+export KUBECTL_EXTERNAL_DIFF="dyff between --omit-header --set-exit-code"
+export ZSH_PLUGINS_ALIAS_TIPS_EXCLUDES="_ k"
+export ARGOCD_ENV_kubernetes_api_ip="1"
+export ZSH_TMUX_AUTOSTART=false
+export KUBECOLOR_OBJ_FRESH="1m"
+
+# -------------------------------------------------------------------
+# PATH
+# -------------------------------------------------------------------
+
+# https://docs.brew.sh/Shell-Completion
+fpath+="$(brew --prefix)/share/zsh/site-functions"
+
+# https://github.com/zsh-users/zsh-completions?tab=readme-ov-file#oh-my-zsh
+fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
+
+# https://krew.sigs.k8s.io/docs/user-guide/setup/install/
+path+="${KREW_ROOT:-$HOME/.krew}/bin"
+
+# -------------------------------------------------------------------
+# Custom functions
+# -------------------------------------------------------------------
+
+# Certificate validation
+certval() {
+  crtID=$(openssl x509 -noout -modulus -in $1 | openssl md5)
+  keyID=$(openssl rsa -noout -modulus -in $2 | openssl md5)
+
+  if [ "$crtID" = "$keyID" ]; then
+    echo "Match!"
+    true
+  else
+    echo "No match!"
+    false
+  fi
+}
+
+# SSH autocompletion really slow fix
+host_list=($(grep "Host " ~/.ssh/config 2>/dev/null | awk '{s = s $2 " "} END {print s}'))
+host_list+=($(grep "Host " ~/.ssh/config-bedag 2>/dev/null | awk '{print $2 " " $3}'))
+zstyle ':completion:*:(ssh|scp|sftp):*' hosts $host_list
+
+# iTerm random tab color
+function tabcolor {
+  echo -n -e "\033]6;1;bg;red;brightness;$(jot -r 1 0 255)\a"
+  echo -n -e "\033]6;1;bg;green;brightness;$(jot -r 1 0 255)\a"
+  echo -n -e "\033]6;1;bg;blue;brightness;$(jot -r 1 0 255)\a"
+}
+
+# -------------------------------------------------------------------
+# Initialize Oh My Zsh
+# -------------------------------------------------------------------
+
+source $ZSH/oh-my-zsh.sh
+
+# -------------------------------------------------------------------
+# Initialize Zoxide
+# -------------------------------------------------------------------
+
+eval "$(zoxide init zsh --cmd cd)"

@@ -1,0 +1,12 @@
+Include config-bedag
+
+Host larsgerber.ch
+IdentityFile ~/.ssh/id_ed25519_hetzner
+User lars
+
+Host mail.larsgerber.ch
+IdentityFile ~/.ssh/id_ed25519_hetzner
+User lars
+
+Host github.com
+IdentityFile ~/.ssh/id_ed25519_github

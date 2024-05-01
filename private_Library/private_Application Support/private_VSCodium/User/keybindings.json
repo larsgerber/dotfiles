@@ -1,0 +1,8 @@
+// Place your key bindings in this file to override the defaultsauto[]
+[
+  {
+    "key": "ctrl+shift+a",
+    "command": "extension.toggleFiles",
+    "when": "filesExplorerFocus"
+  }
+]
