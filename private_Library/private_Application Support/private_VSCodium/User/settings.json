@@ -115,5 +115,6 @@
     "vs-kubernetes.crd-code-completion": "enabled"
   },
   "git.openRepositoryInParentFolders": "never",
-  "editor.stickyScroll.enabled": true
+  "editor.stickyScroll.enabled": true,
+  "git.autofetch": true
 }
