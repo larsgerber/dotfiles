@@ -1,103 +1,218 @@
 # ~/.config/starship.toml
 
-# Inserts a blank line between shell prompts
-add_newline = true 
+"$schema" = 'https://starship.rs/config-schema.json'
 
-# Change command timeout from 500 to 1000 ms
+add_newline = true
 command_timeout = 1000
+continuation_prompt = '... '
 
-# Shows the username
-[username]
-style_user = "white"
-style_root = "white"
-format = "[$user]($style) "
-show_always = true
-disabled = true
+[sudo]
+disabled = false
 
-# Shows the hostname
-[hostname]
-ssh_only = false
-format = "on [$hostname](bold yellow) "
-disabled = true
+[cmd_duration]
+disabled = false
 
-# Shows the directorys
 [directory]
 truncation_length = 1
 truncation_symbol = "…/"
-home_symbol = "󰋜 ~"
-read_only_style = "197"
-read_only = "  "
-format = "at [$path]($style)[$read_only]($read_only_style) "
 disabled = false
 
-# Styles git branch output
 [git_branch]
-symbol = "󰊢 "
-format = "via [$symbol$branch]($style) "
-truncation_length = 20
-truncation_symbol = "…/"
-style = "bold green"
 disabled = false
 
-# Styles git commit output
 [git_commit]
-commit_hash_length = 4
-tag_symbol = "󰓹 "
 disabled = false
 
-# Styles git status output
 [git_status]
-format = '[\($all_status$ahead_behind\)]($style) '
-style = "bold green"
-conflicted = "🏳"
-up_to_date = "✓"
-untracked = " "
-ahead = "⇡${count}"
-diverged = "⇕⇡${ahead_count}⇣${behind_count}"
-behind = "⇣${count}"
-stashed = "󰏖 "
-modified = " "
-staged = '[++\($count\)](green)'
-renamed = "󰖷 "
-deleted = " "
 disabled = false
 
-# Shows current Ansible virtual env
-[python]
-pyenv_version_name = false
+[golang]
 disabled = false
 
-# Shows current Docker context
-[docker_context]
-format = "via [ $context](bold blue) "
-disabled = false
-
-# Shows current Helm version
 [helm]
-format = "via [ $version](bold purple) "
-
-# Shows current NodeJS version
-[nodejs]
-format = "via [󰎙 $version](bold green) "
-disabled = true
-
-# Shows current Ruby version
-[ruby]
-format = "via [ $version]($style) "
-disabled = true
-
-# Shows current package version
-[package]
-format = '[ \[$env\]]($style) '
-disabled = true
-
-# Shows current conda environment
-[conda]
-format = "[$environment](green) "
-ignore_base = true
 disabled = false
 
-# Shows current cluster and namespace
 [kubernetes]
-format = 'via [󱃾 $context\($namespace\)](bold purple) '
+format = 'on [$symbol $context\($namespace\)]($style) '
+symbol = "⛵"
+style = "bold red"
 disabled = false
+
+[[kubernetes.contexts]]
+context_pattern = ".*dev.*|.*kind.*"
+style = "bold green"
+
+[[kubernetes.contexts]]
+context_pattern = ".*test.*|.*stage.*"
+style = "bold yellow"
+
+[aws]
+disabled = true
+
+[bun]
+disabled = true
+
+[c]
+disabled = true
+
+[cmake]
+disabled = true
+
+[cobol]
+disabled = true
+
+[conda]
+disabled = true
+
+[crystal]
+disabled = true
+
+[daml]
+disabled = true
+
+[dart]
+disabled = true
+
+[deno]
+disabled = true
+
+[docker_context]
+disabled = true
+
+[dotnet]
+disabled = true
+
+[elixir]
+disabled = true
+
+[elm]
+disabled = true
+
+[erlang]
+disabled = true
+
+[fennel]
+disabled = true
+
+[fossil_branch]
+disabled = true
+
+[gcloud]
+disabled = true
+
+[gradle]
+disabled = true
+
+[guix_shell]
+disabled = true
+
+[haskell]
+disabled = true
+
+[haxe]
+disabled = true
+
+[hg_branch]
+disabled = true
+
+[java]
+disabled = true
+
+[julia]
+disabled = true
+
+[kotlin]
+disabled = true
+
+[lua]
+disabled = true
+
+[memory_usage]
+disabled = true
+
+[meson]
+disabled = true
+
+[nim]
+disabled = true
+
+[nix_shell]
+disabled = true
+
+[nodejs]
+disabled = true
+
+[ocaml]
+disabled = true
+
+[opa]
+disabled = true
+
+[openstack]
+disabled = true
+
+[os]
+disabled = true
+
+[package]
+disabled = true
+
+[perl]
+disabled = true
+
+[php]
+disabled = true
+
+[pijul_channel]
+disabled = true
+
+[pulumi]
+disabled = true
+
+[purescript]
+disabled = true
+
+[python]
+disabled = true
+
+[raku]
+disabled = true
+
+[red]
+disabled = true
+
+[ruby]
+disabled = true
+
+[rust]
+disabled = true
+
+[scala]
+disabled = true
+
+[spack]
+disabled = true
+
+[swift]
+disabled = true
+
+[terraform]
+disabled = true
+
+[time]
+disabled = true
+
+[username]
+disabled = true
+
+[vagrant]
+disabled = true
+
+[vlang]
+disabled = true
+
+[zig]
+disabled = true
+
+[solidity]
+disabled = true
