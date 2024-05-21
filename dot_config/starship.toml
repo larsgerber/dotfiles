@@ -7,6 +7,7 @@ command_timeout = 1000
 continuation_prompt = '... '
 
 [sudo]
+symbol = "sudo "
 disabled = false
 
 [cmd_duration]
@@ -15,25 +16,31 @@ disabled = false
 [directory]
 truncation_length = 1
 truncation_symbol = "…/"
+read_only = " ro"
 disabled = false
 
 [git_branch]
+symbol = "git "
 disabled = false
 
 [git_commit]
+tag_symbol = " tag "
 disabled = false
 
 [git_status]
+ahead = ">"
+behind = "<"
+diverged = "<>"
+renamed = "r"
+deleted = "x"
 disabled = false
 
 [golang]
-disabled = false
-
-[helm]
+symbol = "go "
 disabled = false
 
 [kubernetes]
-format = 'on [$symbol $context\($namespace\)]($style) '
+format = 'via [$symbol $context\($namespace\)]($style) '
 symbol = "⛵"
 style = "bold red"
 disabled = false
@@ -110,6 +117,9 @@ disabled = true
 disabled = true
 
 [haxe]
+disabled = true
+
+[helm]
 disabled = true
 
 [hg_branch]
