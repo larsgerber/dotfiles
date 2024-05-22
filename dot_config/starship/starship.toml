@@ -64,6 +64,9 @@ style = "bold green"
 context_pattern = ".*test.*|.*stage.*"
 style = "bold yellow"
 
+[line_break]
+disabled = false
+
 [sudo]
 symbol = "sudo "
 disabled = false
@@ -165,9 +168,6 @@ disabled = true
 disabled = true
 
 [kotlin]
-disabled = true
-
-[line_break]
 disabled = true
 
 [localip]

@@ -39,7 +39,6 @@ plugins=(
   encode64
   tmux
   vscode
-  starship
   history
   chezmoi
   subst
@@ -70,8 +69,9 @@ export VSCODE=codium
 export KUBE_EDITOR="codium --wait"
 export KUBECTL_EXTERNAL_DIFF="dyff between --omit-header --set-exit-code"
 export ZSH_PLUGINS_ALIAS_TIPS_EXCLUDES="_"
-export ARGOCD_ENV_kubernetes_api_ip="1"
 export ZSH_TMUX_AUTOSTART=false
+export STARSHIP_CONFIG=~/.config/starship/starship.toml
+export ARGOCD_ENV_kubernetes_api_ip="1"
 export KUBECOLOR_OBJ_FRESH="1m"
 
 # -------------------------------------------------------------------
@@ -116,6 +116,12 @@ function tabcolor {
   echo -n -e "\033]6;1;bg;green;brightness;$(jot -r 1 0 255)\a"
   echo -n -e "\033]6;1;bg;blue;brightness;$(jot -r 1 0 255)\a"
 }
+
+# -------------------------------------------------------------------
+# Initialize Starship
+# -------------------------------------------------------------------
+
+eval "$(starship init zsh)"
 
 # -------------------------------------------------------------------
 # Initialize Oh My Zsh
