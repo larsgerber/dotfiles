@@ -6,14 +6,19 @@ add_newline = true
 command_timeout = 1000
 continuation_prompt = '... '
 
-[sudo]
-symbol = "sudo "
+[character]
 disabled = false
 
 [cmd_duration]
+min_time_to_notify = 300_000
+show_notifications = true
+disabled = false
+
+[container]
 disabled = false
 
 [directory]
+format = "at [$path]($style)[$read_only]($read_only_style) "
 truncation_length = 1
 truncation_symbol = "…/"
 read_only = " ro"
@@ -25,6 +30,12 @@ disabled = false
 
 [git_commit]
 tag_symbol = " tag "
+disabled = false
+
+[git_state]
+disabled = false
+
+[git_metrics]
 disabled = false
 
 [git_status]
@@ -53,7 +64,17 @@ style = "bold green"
 context_pattern = ".*test.*|.*stage.*"
 style = "bold yellow"
 
+[sudo]
+symbol = "sudo "
+disabled = false
+
 [aws]
+disabled = true
+
+[battery]
+disabled = true
+
+[buf]
 disabled = true
 
 [bun]
@@ -83,6 +104,9 @@ disabled = true
 [deno]
 disabled = true
 
+[direnv]
+disabled = true
+
 [docker_context]
 disabled = true
 
@@ -104,13 +128,19 @@ disabled = true
 [fossil_branch]
 disabled = true
 
+[fossil_metrics]
+disabled = true
+
 [gcloud]
 disabled = true
 
-[gradle]
+[gleam]
 disabled = true
 
 [guix_shell]
+disabled = true
+
+[gradle]
 disabled = true
 
 [haskell]
@@ -122,16 +152,25 @@ disabled = true
 [helm]
 disabled = true
 
-[hg_branch]
+[hostname]
 disabled = true
 
 [java]
+disabled = true
+
+[jobs]
 disabled = true
 
 [julia]
 disabled = true
 
 [kotlin]
+disabled = true
+
+[line_break]
+disabled = true
+
+[localip]
 disabled = true
 
 [lua]
@@ -141,6 +180,12 @@ disabled = true
 disabled = true
 
 [meson]
+disabled = true
+
+[hg_branch]
+disabled = true
+
+[nats]
 disabled = true
 
 [nim]
@@ -153,6 +198,9 @@ disabled = true
 disabled = true
 
 [ocaml]
+disabled = true
+
+[odin]
 disabled = true
 
 [opa]
@@ -185,6 +233,12 @@ disabled = true
 [python]
 disabled = true
 
+[quarto]
+disabled = true
+
+[rlang]
+disabled = true
+
 [raku]
 disabled = true
 
@@ -200,7 +254,22 @@ disabled = true
 [scala]
 disabled = true
 
+[shell]
+disabled = true
+
+[shlvl]
+disabled = true
+
+[singularity]
+disabled = true
+
+[solidity]
+disabled = true
+
 [spack]
+disabled = true
+
+[status]
 disabled = true
 
 [swift]
@@ -212,6 +281,9 @@ disabled = true
 [time]
 disabled = true
 
+[typst]
+disabled = true
+
 [username]
 disabled = true
 
@@ -221,8 +293,8 @@ disabled = true
 [vlang]
 disabled = true
 
-[zig]
+[vcsh]
 disabled = true
 
-[solidity]
+[zig]
 disabled = true
