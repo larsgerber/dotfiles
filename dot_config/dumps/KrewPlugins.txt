@@ -1,4 +1,4 @@
-# This file was generated using ./update.sh
+# This file was generated using ~/.config/scripts/update.sh
 bedag/admin-connect
 bedag/node-connect
 foreach

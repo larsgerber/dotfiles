@@ -1,4 +1,4 @@
-# This file was generated using ./update.sh
+# This file was generated using ~/.config/scripts/update.sh
 tap "beeftornado/rmtree"
 tap "fluxcd/tap"
 tap "homebrew/bundle"
@@ -33,6 +33,7 @@ brew "pre-commit"
 brew "prometheus"
 brew "starship"
 brew "teleport"
+brew "terraform"
 brew "tmux"
 brew "tree"
 brew "watch"
@@ -73,5 +74,4 @@ cask "vscodium"
 mas "Amphetamine", id: 937984704
 mas "Bitwarden", id: 1352778147
 mas "Citrix Secure Access", id: 1338991513
-mas "Core Tunnel", id: 1354318707
 mas "WireGuard", id: 1451685025
