@@ -29,6 +29,7 @@ plugins=(
   podman
   kubecolor
   kubectl
+  kubectl-context-lock
   kind
   ansible
   helm
