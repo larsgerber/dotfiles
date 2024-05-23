@@ -50,8 +50,8 @@ plugins=(
 # Aliases
 # -------------------------------------------------------------------
 
-alias gitstatusall="find . -maxdepth 1 -mindepth 1 -type d -exec sh -c '(echo {} && cd {} && git status -s && echo)' \;"
-alias gitpullall="find . -maxdepth 1 -mindepth 1 -type d -exec sh -c '(echo {} && cd {} && git pull && echo)' \;"
+alias gitstatusall="find . -maxdepth 3 -mindepth 1 -type d -exec sh -c '(echo {} && cd {} && git status -s 2> /dev/null && echo)' \;"
+alias gitpullall="find . -maxdepth 3 -mindepth 1 -type d -exec sh -c '(echo {} && cd {} && git pull 2> /dev/null && echo)' \;"
 alias zshconfig="vsc ~/.zshrc"
 alias ohmyzsh="vsc ~/.oh-my-zsh"
 alias moi=chezmoi
@@ -77,6 +77,12 @@ export KUBECOLOR_OBJ_FRESH="1m"
 # -------------------------------------------------------------------
 # PATH
 # -------------------------------------------------------------------
+
+# https://formulae.brew.sh/formula/coreutils
+# PATH="$(brew --prefix)/opt/coreutils/libexec/gnubin:$PATH"
+
+# https://formulae.brew.sh/formula/gnu-sed
+# PATH="$(brew --prefix)/opt/gnu-sed/libexec/gnubin:$PATH"
 
 # https://docs.brew.sh/Shell-Completion
 fpath+="$(brew --prefix)/share/zsh/site-functions"
