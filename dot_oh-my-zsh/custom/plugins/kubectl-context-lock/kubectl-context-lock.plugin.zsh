@@ -3,11 +3,14 @@ if (( ! $+commands[kubectl] )); then
 fi
 
 kxlock() {
-  KUBECONFIG=$(mktemp -t 'kxlockconfig')
-  kubectl config view --raw > $KUBECONFIG
-  export KUBECONFIG=$KUBECONFIG
+  if [ ! -z "$KUBECONFIG" ]; then return; fi
+  KUBECONFIG_TMP=$(mktemp -t 'kxlockconfig')
+  kubectl config view --raw > $KUBECONFIG_TMP
+  export KUBECONFIG=$KUBECONFIG_TMP
+  export KXLOCK=true
 }
 
 kxunlock() {
   unset KUBECONFIG
+  unset KXLOCK
 }

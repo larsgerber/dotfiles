@@ -24,6 +24,9 @@ truncation_symbol = "…/"
 read_only = " ro"
 disabled = false
 
+[env_var.KXLOCK]
+format = 'with [locked context]($style) '
+
 [git_branch]
 symbol = "git "
 disabled = false
