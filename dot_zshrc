@@ -51,8 +51,9 @@ plugins=(
 # Aliases
 # -------------------------------------------------------------------
 
-alias gitstatusall="find . -maxdepth 3 -mindepth 1 -type d -exec sh -c '(echo {} && cd {} && git status -s 2> /dev/null && echo)' \;"
-alias gitpullall="find . -maxdepth 3 -mindepth 1 -type d -exec sh -c '(echo {} && cd {} && git pull 2> /dev/null && echo)' \;"
+alias gitcheckoutdefaultall="find $HOME/Documents -maxdepth 4 -mindepth 1 -type d -name ".git" -exec sh -c 'cd {}/.. && pwd && git checkout $git_main_branch && echo' \;"
+alias gitstatusall="find $HOME/Documents -maxdepth 4 -mindepth 1 -type d -name ".git" -exec sh -c 'cd {}/.. && pwd && git status --short --branch && echo' \;"
+alias gitpullall="find $HOME/Documents -maxdepth 4 -mindepth 1 -type d -name ".git" -exec sh -c 'cd {}/.. && pwd && git pull 2> /dev/null && echo' \;"
 alias zshconfig="vsc ~/.zshrc"
 alias ohmyzsh="vsc ~/.oh-my-zsh"
 alias moi=chezmoi
