@@ -116,5 +116,6 @@
   },
   "git.openRepositoryInParentFolders": "never",
   "editor.stickyScroll.enabled": true,
-  "git.autofetch": true
+  "git.autofetch": true,
+  "gitlab.duoChat.enabled": false
 }
