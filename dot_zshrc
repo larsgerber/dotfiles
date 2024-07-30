@@ -26,22 +26,17 @@ plugins=(
   dotenv
   git
   brew
-  podman
   kubecolor
   kubectl
   kubectl-context-lock
   kind
   ansible
   helm
-  zsh-syntax-highlighting
-  zsh-autosuggestions
-  zsh-completions
   alias-tips
   encode64
   tmux
   vscode
   history
-  chezmoi
   subst
   fzf
   quick-look
@@ -57,6 +52,7 @@ alias gitpullall="find $HOME/Documents -maxdepth 4 -mindepth 1 -type d -name ".g
 alias zshconfig="vsc ~/.zshrc"
 alias ohmyzsh="vsc ~/.oh-my-zsh"
 alias moi=chezmoi
+alias moicd="cd $(chezmoi source-path)"
 alias kx='kubectx'
 alias kn='kubens'
 alias yh=yq
@@ -89,8 +85,8 @@ export KUBECOLOR_OBJ_FRESH="1m"
 # https://docs.brew.sh/Shell-Completion
 fpath+="$(brew --prefix)/share/zsh/site-functions"
 
-# https://github.com/zsh-users/zsh-completions?tab=readme-ov-file#oh-my-zsh
-fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
+# https://formulae.brew.sh/formula/zsh-completions
+fpath+="$(brew --prefix)/share/zsh-completions"
 
 # https://krew.sigs.k8s.io/docs/user-guide/setup/install/
 path+="${KREW_ROOT:-$HOME/.krew}/bin"
@@ -135,7 +131,9 @@ eval "$(starship init zsh)"
 # Initialize Oh My Zsh
 # -------------------------------------------------------------------
 
-source $ZSH/oh-my-zsh.sh
+source "$(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+source "$(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
+source "$ZSH/oh-my-zsh.sh"
 
 # -------------------------------------------------------------------
 # Initialize Zoxide
