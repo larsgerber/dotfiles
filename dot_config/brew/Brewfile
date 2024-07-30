@@ -2,8 +2,6 @@
 tap "beeftornado/rmtree"
 tap "fluxcd/tap"
 tap "homebrew/bundle"
-tap "homebrew/cask-fonts"
-tap "homebrew/cask-versions"
 tap "homeport/tap"
 tap "shopify/shopify"
 brew "xz"
@@ -37,7 +35,6 @@ brew "prometheus"
 brew "sops"
 brew "starship"
 brew "teleport"
-brew "terraform"
 brew "tmux"
 brew "tree"
 brew "watch"
@@ -53,7 +50,6 @@ brew "shopify/shopify/ejson"
 cask "alt-tab"
 cask "appcleaner"
 cask "citrix-workspace"
-cask "command-x"
 cask "core-tunnel"
 cask "discord"
 cask "displaylink"
@@ -83,4 +79,5 @@ cask "vscodium"
 mas "Amphetamine", id: 937984704
 mas "Bitwarden", id: 1352778147
 mas "Citrix Secure Access", id: 1338991513
+mas "Command X", id: 6448461551
 mas "WireGuard", id: 1451685025
