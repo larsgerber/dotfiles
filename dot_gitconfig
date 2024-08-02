@@ -17,10 +17,8 @@ insteadOf = https://git.mgmtbi.ch/
 insteadOf = https://git.bedag.cloud/
 [commit]
 gpgsign = true
-[diff "dyff"]
-command = "dyff_between() { dyff --color on between --omit-header \"$2\" \"$5\"; }; dyff_between"
-[core]
-attributesfile = ~/.gitattributes
+[diff]
+external = difft
 [includeIf "gitdir:~/Library/"]
 path = .gitconfig-privat
 [includeIf "gitdir:~/Documents/Privat/"]
