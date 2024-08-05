@@ -14,6 +14,12 @@ brew upgrade --cask --greedy
 brew cleanup
 
 echo ""
+echo "=== Oh My Zsh ==="
+echo ""
+
+zsh -c 'source ~/.zshrc && omz update'
+
+echo ""
 echo "=== VSCodium ==="
 echo ""
 
