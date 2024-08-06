@@ -18,3 +18,4 @@ pkief.material-icon-theme
 redhat.vscode-yaml
 tamasfe.even-better-toml
 usernamehw.errorlens
+yzhang.markdown-all-in-one
