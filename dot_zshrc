@@ -29,12 +29,8 @@ plugins=(
   kubecolor
   kubectl
   kubectl-context-lock
-  kind
-  ansible
-  helm
   alias-tips
   encode64
-  tmux
   vscode
   history
   subst
