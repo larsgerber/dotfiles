@@ -39,31 +39,34 @@ plugins=(
 )
 
 # -------------------------------------------------------------------
+# zstyle config
+# -------------------------------------------------------------------
+
+zstyle ':omz:update' mode disabled
+
+# -------------------------------------------------------------------
 # Aliases
 # -------------------------------------------------------------------
 
-alias gitcheckoutdefaultall="find $HOME/Documents -maxdepth 4 -mindepth 1 -type d -name ".git" -exec sh -c 'cd {}/.. && pwd && git checkout $git_main_branch && echo' \;"
 alias gitstatusall="find $HOME/Documents -maxdepth 4 -mindepth 1 -type d -name ".git" -exec sh -c 'cd {}/.. && pwd && git status --short --branch && echo' \;"
 alias gitpullall="find $HOME/Documents -maxdepth 4 -mindepth 1 -type d -name ".git" -exec sh -c 'cd {}/.. && pwd && git pull 2> /dev/null && echo' \;"
 alias zshconfig="vsc ~/.zshrc"
 alias ohmyzsh="vsc ~/.oh-my-zsh"
 alias moi=chezmoi
 alias moicd="cd $(chezmoi source-path)"
-alias kx='kubectx'
-alias kn='kubens'
-alias yh=yq
-alias watch='KUBECOLOR_FORCE_COLORS=true watch --color '
+alias kx="kubectx"
+alias kn="kubens"
+alias cil="cilium"
+alias watch="KUBECOLOR_FORCE_COLORS=true watch --color "
 
 # -------------------------------------------------------------------
 # Variables
 # -------------------------------------------------------------------
 
 export EDITOR="vim"
-export VSCODE=codium
+export VSCODE="codium"
 export KUBE_EDITOR="codium --wait"
-export KUBECTL_EXTERNAL_DIFF="dyff between --omit-header --set-exit-code"
 export ZSH_PLUGINS_ALIAS_TIPS_EXCLUDES="_"
-export ZSH_TMUX_AUTOSTART=false
 export STARSHIP_CONFIG=~/.config/starship/starship.toml
 export ARGOCD_ENV_kubernetes_api_ip="1"
 export KUBECOLOR_OBJ_FRESH="1m"
