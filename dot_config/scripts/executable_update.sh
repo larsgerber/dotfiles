@@ -17,7 +17,7 @@ echo ""
 echo "=== Oh My Zsh ==="
 echo ""
 
-zsh -c 'source ~/.zshrc && omz update && exit 0'
+~/.oh-my-zsh/tools/upgrade.sh -v minimal
 
 echo ""
 echo "=== VSCodium ==="
