@@ -117,5 +117,6 @@
   "git.openRepositoryInParentFolders": "never",
   "editor.stickyScroll.enabled": true,
   "git.autofetch": true,
-  "gitlab.duoChat.enabled": false
+  "gitlab.duoChat.enabled": false,
+  "yaml.maxItemsComputed": 50000
 }
