@@ -58,6 +58,8 @@ alias kx="kubectx"
 alias kn="kubens"
 alias cil="cilium"
 alias watch="KUBECOLOR_FORCE_COLORS=true watch --color "
+alias rcat="$(which cat)"
+alias cat="$(which bat)"
 
 # -------------------------------------------------------------------
 # Variables
@@ -70,6 +72,7 @@ export ZSH_PLUGINS_ALIAS_TIPS_EXCLUDES="_"
 export STARSHIP_CONFIG=~/.config/starship/starship.toml
 export ARGOCD_ENV_kubernetes_api_ip="1"
 export KUBECOLOR_OBJ_FRESH="1m"
+export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
 # -------------------------------------------------------------------
 # PATH
