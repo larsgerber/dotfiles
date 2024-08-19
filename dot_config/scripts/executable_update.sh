@@ -11,13 +11,15 @@ brew outdated
 brew outdated --cask --greedy
 brew upgrade
 brew upgrade --cask --greedy
-brew cleanup
+brew cleanup --prune=0 --scrub
 
 echo ""
 echo "=== Oh My Zsh ==="
 echo ""
 
 ~/.oh-my-zsh/tools/upgrade.sh -v minimal
+
+find ~/.oh-my-zsh/custom/plugins -maxdepth 2 -type d -name ".git" -exec sh -c 'echo && cd {}/.. && pwd && git pull 2> /dev/null' \;
 
 echo ""
 echo "=== VSCodium ==="
