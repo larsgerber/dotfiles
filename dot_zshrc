@@ -52,6 +52,7 @@ alias gitstatusall="find $HOME/Documents -maxdepth 4 -mindepth 1 -type d -name "
 alias gitpullall="find $HOME/Documents -maxdepth 4 -mindepth 1 -type d -name ".git" -exec sh -c 'cd {}/.. && pwd && git pull 2> /dev/null && echo' \;"
 alias zshconfig="vsc ~/.zshrc"
 alias ohmyzsh="vsc ~/.oh-my-zsh"
+alias update="~/.config/scripts/update.sh"
 alias moi=chezmoi
 alias moicd="cd $(chezmoi source-path)"
 alias kx="kubectx"
@@ -73,6 +74,7 @@ export STARSHIP_CONFIG=~/.config/starship/starship.toml
 export ARGOCD_ENV_kubernetes_api_ip="1"
 export KUBECOLOR_OBJ_FRESH="1m"
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+export DFT_BYTE_LIMIT="2000000"
 
 # -------------------------------------------------------------------
 # PATH
