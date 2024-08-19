@@ -118,5 +118,6 @@
   "editor.stickyScroll.enabled": true,
   "git.autofetch": true,
   "gitlab.duoChat.enabled": false,
-  "yaml.maxItemsComputed": 50000
+  "yaml.maxItemsComputed": 50000,
+  "gitlab.aiAssistedCodeSuggestions.enabled": false
 }
