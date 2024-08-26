@@ -6,11 +6,13 @@ echo ""
 echo "=== Brew ==="
 echo ""
 
+export HOMEBREW_NO_ENV_HINTS=1
 brew update
 brew outdated
 brew outdated --cask --greedy
 brew upgrade
 brew upgrade --cask --greedy
+brew autoremove
 brew cleanup --prune=0 --scrub
 
 echo ""
