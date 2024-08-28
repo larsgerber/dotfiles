@@ -1,21 +1,19 @@
 # This file was generated using ~/.config/scripts/update.sh
-4ops.terraform
 adrianwilczynski.toggle-hidden
 catppuccin.catppuccin-vsc
 davidanson.vscode-markdownlint
-dotjoshjohnson.xml
 eamodio.gitlens
-esbenp.prettier-vscode
+editorconfig.editorconfig
 foxundermoon.shell-format
 github.copilot
 gitlab.gitlab-workflow
 golang.go
-hashicorp.hcl
 mhutchie.git-graph
 ms-azuretools.vscode-docker
 ms-kubernetes-tools.vscode-kubernetes-tools
 pkief.material-icon-theme
 redhat.vscode-yaml
 tamasfe.even-better-toml
+timonwong.shellcheck
 usernamehw.errorlens
 yzhang.markdown-all-in-one
