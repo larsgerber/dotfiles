@@ -44,7 +44,7 @@
   "window.zoomLevel": 1,
   "files.associations": {
     "*.river": "hcl",
-    "inventory": "shellscript",
+    "inventory": "properties",
     ".env": "shellscript",
     "config-bedag": "shellscript",
     "config": "shellscript"
@@ -58,17 +58,18 @@
   "redhat.telemetry.enabled": false,
   // Plugin: GitLab Workflow
   "gitlab.duoChat.enabled": false,
-  "gitlab.aiAssistedCodeSuggestions.enabled": false,
   // Plugin: GitHub Copilot
   "github.copilot.enable": {
     "*": false
   },
   // Plugin: Peek Hidden Files
   "files.exclude": {
-    "**/.git": true
+    "**/.git": true,
+    "**/.vscode": true
   },
   // Plugin: ShellCheck
   "editor.codeActionsOnSave": {
     "source.fixAll.shellcheck": "explicit"
   },
+  "gitlab.duoCodeSuggestions.enabled": false,
 }
