@@ -2,7 +2,6 @@
 bedag/admin-connect
 bedag/node-connect
 foreach
-pod-inspect
 stern
 view-cert
 view-secret
