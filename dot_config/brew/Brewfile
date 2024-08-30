@@ -49,6 +49,9 @@ brew "zsh-autosuggestions"
 brew "zsh-completions"
 brew "zsh-syntax-highlighting"
 brew "fluxcd/tap/flux"
+brew "fluxcd/tap/flux@2.0", link: false
+brew "fluxcd/tap/flux@2.1", link: false
+brew "fluxcd/tap/flux@2.2", link: false
 brew "shopify/shopify/ejson"
 cask "alt-tab"
 cask "appcleaner"
