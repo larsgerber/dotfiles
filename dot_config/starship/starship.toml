@@ -11,7 +11,7 @@ disabled = false
 
 [cmd_duration]
 min_time_to_notify = 300_000
-show_notifications = true
+show_notifications = false
 disabled = false
 
 [container]

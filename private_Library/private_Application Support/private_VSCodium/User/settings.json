@@ -46,8 +46,8 @@
     "*.river": "hcl",
     "inventory": "properties",
     ".env": "shellscript",
-    "config-bedag": "shellscript",
-    "config": "shellscript"
+    "**/.ssh/config*": "shellscript",
+    "*.ejson": "json"
   },
   "[markdown]": {
     "files.trimTrailingWhitespace": false,
@@ -71,5 +71,9 @@
   "editor.codeActionsOnSave": {
     "source.fixAll.shellcheck": "explicit"
   },
+  "shellcheck.ignorePatterns": {
+    "**/.ssh/config*": true,
+  },
   "gitlab.duoCodeSuggestions.enabled": false,
+  "git.openRepositoryInParentFolders": "never",
 }
