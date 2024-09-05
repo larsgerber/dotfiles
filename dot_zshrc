@@ -32,7 +32,6 @@ plugins=(
   alias-tips
   encode64
   vscode
-  history
   subst
   fzf
   quick-look
@@ -144,10 +143,17 @@ source "$ZSH/oh-my-zsh.sh"
 # Initialize Atuin
 # -------------------------------------------------------------------
 
-eval "$(atuin init zsh --disable-up-arrow)"
+eval "$(atuin init zsh)"
+unset HISTFILE
 
 # -------------------------------------------------------------------
 # Initialize Zoxide
 # -------------------------------------------------------------------
 
 eval "$(zoxide init zsh --cmd cd)"
+
+# -------------------------------------------------------------------
+# Initialize Key Bindings
+# -------------------------------------------------------------------
+
+bindkey '^ ' autosuggest-accept
