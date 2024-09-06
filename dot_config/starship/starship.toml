@@ -56,16 +56,27 @@ disabled = false
 [kubernetes]
 format = 'via [$symbol $context\($namespace\)]($style) '
 symbol = "⛵"
-style = "bold red"
+style = "bold grey"
 disabled = false
 
 [[kubernetes.contexts]]
-context_pattern = ".*dev.*|.*kind.*"
+context_pattern = "kind.*"
+style = "bold purple"
+
+[[kubernetes.contexts]]
+context_pattern = 'co-(?<cluster>.*dev.*)'
+context_alias = "$cluster"
 style = "bold green"
 
 [[kubernetes.contexts]]
-context_pattern = ".*test.*|.*stage.*"
+context_pattern = 'co-(?<cluster>(.*test.*|.*stage.*))'
+context_alias = "$cluster"
 style = "bold yellow"
+
+[[kubernetes.contexts]]
+context_pattern = 'co-(?P<cluster>[\w-]+)'
+context_alias = "$cluster"
+style = "bold red"
 
 [line_break]
 disabled = false
