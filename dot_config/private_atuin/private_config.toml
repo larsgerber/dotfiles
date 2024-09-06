@@ -98,7 +98,7 @@ sync_frequency = "0"
 ## with ^ or end with $, they'll match anywhere in the command.
 ## For details on the supported regular expression syntax, see
 ## https://docs.rs/regex/latest/regex/#syntax
-history_filter = ["^e64", "^d64", "^curl .*(A|a)uthorization.+"]
+history_filter = ["^e64", "^d64", "^curl .*(A|a)uthorization.+", ".*--ejson-key.*"]
 
 ## prevent commands run with cwd matching any of these regexes from being written
 ## to history. Note that these regular expressions are unanchored, i.e. if they don't
