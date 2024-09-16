@@ -66,19 +66,19 @@ HelmRepos=$HOME/.config/dumps/HelmRepos.txt
 HelmPlugins=$HOME/.config/dumps/HelmPlugins.txt
 KrewPlugins=$HOME/.config/dumps/KrewPlugins.txt
 
-brew bundle dump --force --file=$Brewfile.tmp
-codium --list-extensions >$VSCodiumExtensions.tmp
-helm repo list | awk '{if (NR!=1) {print $1}}' >$HelmRepos.tmp
-helm plugin list | awk '{if (NR!=1) {print $1}}' >$HelmPlugins.tmp
-kubectl krew list >$KrewPlugins.tmp
+brew bundle dump --force --file="$Brewfile".tmp
+codium --list-extensions >"$VSCodiumExtensions".tmp
+helm repo list | awk '{if (NR!=1) {print $1}}' >"$HelmRepos".tmp
+helm plugin list | awk '{if (NR!=1) {print $1}}' >"$HelmPlugins".tmp
+kubectl krew list >"$KrewPlugins".tmp
 
-(echo $msg && cat $Brewfile.tmp) >$Brewfile
-(echo $msg && cat $VSCodiumExtensions.tmp) >$VSCodiumExtensions
-(echo $msg && cat $HelmRepos.tmp) >$HelmRepos
-(echo $msg && cat $HelmPlugins.tmp) >$HelmPlugins
-(echo $msg && cat $KrewPlugins.tmp) >$KrewPlugins
+(echo "$msg" && cat "$Brewfile".tmp) >"$Brewfile"
+(echo "$msg" && cat "$VSCodiumExtensions".tmp) >"$VSCodiumExtensions"
+(echo "$msg" && cat "$HelmRepos".tmp) >"$HelmRepos"
+(echo "$msg" && cat "$HelmPlugins".tmp) >"$HelmPlugins"
+(echo "$msg" && cat "$KrewPlugins".tmp) >"$KrewPlugins"
 
-rm $HOME/.config/*/*.tmp
+rm "$HOME"/.config/*/*.tmp
 
 echo ""
 echo "Good, we're done"
