@@ -1,6 +1,6 @@
 # dotfiles
 
-This repository contains all the configuration to set up my MacBook using [Chezmoi](https://chezmoi.io), the best dotfile manager.
+My dotfiles, managed with [chezmoi](https://chezmoi.io).
 
 ## How to run
 
