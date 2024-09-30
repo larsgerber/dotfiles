@@ -65,6 +65,17 @@
   // Plugin: Peek Hidden Files
   "files.exclude": {
     "**/.git": true,
+    "**/.gitignore": true,
+    "**/.ansible-lint": true,
+    "**/.editorconfig": true,
+    "**/.markdownlint.yaml": true,
+    "**/.pre-commit-config.yaml": true,
+    "**/.shellcheckrc": true,
+    "**/.yamllint.yaml": true,
+    "**/ansible.cfg": true,
+    "**/LICENSE": true,
+    "**/requirements.yaml": true,
+    "**/renovate.json": true,
     "**/.vscode": true
   },
   // Plugin: ShellCheck
