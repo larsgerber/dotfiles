@@ -39,6 +39,7 @@ alias ohmyzsh="vsc ~/.oh-my-zsh"
 alias update="~/.config/scripts/update.sh"
 alias tp="~/.config/scripts/teleport-app.sh"
 alias tshenv="~/.config/scripts/teleport-env.sh"
+alias gitlab-permalink="~/.config/scripts/gitlab-permalink.sh"
 alias moi=chezmoi
 alias moicd="cd $(chezmoi source-path)"
 alias kx="kubectx"
