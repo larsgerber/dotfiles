@@ -10,8 +10,9 @@ k9s:
     headless: false
     logoless: true
     crumbsless: false
-    reactive: false
+    reactive: true
     noIcons: false
+    skin: catppuccin-mocha-transparent
     defaultsToFullScreen: false
   skipLatestRevCheck: false
   disablePodCounting: false
