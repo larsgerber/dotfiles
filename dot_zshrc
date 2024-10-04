@@ -59,6 +59,7 @@ export KUBE_EDITOR="codium --wait"
 export ZSH_PLUGINS_ALIAS_TIPS_EXCLUDES="_ kubectl"
 export STARSHIP_CONFIG=~/.config/starship/starship.toml
 export KUBECOLOR_CONFIG=~/.config/kubecolor/color.yaml
+export K9S_CONFIG_DIR=~/.config/k9s
 export ARGOCD_ENV_kubernetes_api_ip="1"
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 export DFT_BYTE_LIMIT="2000000"
