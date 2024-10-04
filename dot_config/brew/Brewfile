@@ -4,6 +4,7 @@ tap "fluxcd/tap"
 tap "homebrew/bundle"
 tap "homeport/tap"
 tap "shopify/shopify"
+tap "thezoraiz/ascii-image-converter"
 brew "xz"
 brew "python@3.12"
 brew "ansible"
@@ -53,6 +54,7 @@ brew "fluxcd/tap/flux@2.0", link: false
 brew "fluxcd/tap/flux@2.1", link: false
 brew "fluxcd/tap/flux@2.2", link: false
 brew "shopify/shopify/ejson"
+brew "thezoraiz/ascii-image-converter/ascii-image-converter"
 cask "alt-tab"
 cask "appcleaner"
 cask "citrix-workspace"
