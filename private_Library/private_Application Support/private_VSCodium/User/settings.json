@@ -87,4 +87,8 @@
   },
   "gitlab.duoCodeSuggestions.enabled": false,
   "git.openRepositoryInParentFolders": "never",
+  "search.quickOpen.includeHistory": true,
+  "search.exclude": {
+    "/var/**": true
+  }
 }
