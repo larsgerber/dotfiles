@@ -17,9 +17,9 @@ plugins=(
   alias-tips
   encode64
   vscode
-  subst
   fzf
   quick-look
+  completions
 )
 
 # -------------------------------------------------------------------
