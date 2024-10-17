@@ -47,7 +47,8 @@
     "inventory": "properties",
     ".env": "shellscript",
     "**/.ssh/config*": "shellscript",
-    "*.ejson": "json"
+    "*.ejson": "json",
+    "hosts": "properties"
   },
   "[markdown]": {
     "files.trimTrailingWhitespace": false,
@@ -55,6 +56,9 @@
   },
   // Plugin: YAML
   "yaml.maxItemsComputed": 50000,
+  "yaml.customTags": [
+    "!vault"
+  ],
   "redhat.telemetry.enabled": false,
   // Plugin: GitLab Workflow
   "gitlab.duoChat.enabled": false,
@@ -76,7 +80,8 @@
     "**/LICENSE": true,
     "**/requirements.yaml": true,
     "**/renovate.json": true,
-    "**/.vscode": true
+    "**/.vscode": true,
+    "**/.jump": true
   },
   // Plugin: ShellCheck
   "editor.codeActionsOnSave": {
@@ -90,5 +95,6 @@
   "search.quickOpen.includeHistory": true,
   "search.exclude": {
     "/var/**": true
-  }
+  },
+  "editor.accessibilitySupport": "off"
 }
