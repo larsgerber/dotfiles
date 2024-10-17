@@ -78,7 +78,9 @@ export DFT_BYTE_LIMIT="2000000"
 fpath+="$(brew --prefix)/share/zsh/site-functions"
 
 # https://formulae.brew.sh/formula/zsh-completions
-fpath+="$(brew --prefix)/share/zsh-completions"
+# fpath+="$(brew --prefix)/share/zsh-completions"
+# https://github.com/zsh-users/zsh-completions/issues/1083
+fpath+="${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src"
 
 # https://krew.sigs.k8s.io/docs/user-guide/setup/install/
 path+="${KREW_ROOT:-$HOME/.krew}/bin"

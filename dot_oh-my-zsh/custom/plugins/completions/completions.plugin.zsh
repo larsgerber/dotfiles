@@ -18,3 +18,4 @@ function completion() {
 completion tfctl completion zsh
 completion tsh --completion-script-zsh
 completion subst completion zsh
+completion fx --comp zsh
