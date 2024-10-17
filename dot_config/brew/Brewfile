@@ -90,7 +90,6 @@ cask "stats"
 cask "tsh"
 cask "vscodium"
 cask "wireshark"
-mas "Amphetamine", id: 937984704
 mas "Bitwarden", id: 1352778147
 mas "Citrix Secure Access", id: 1338991513
 mas "Command X", id: 6448461551
