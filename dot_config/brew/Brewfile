@@ -3,6 +3,7 @@ tap "beeftornado/rmtree"
 tap "fluxcd/tap"
 tap "homebrew/bundle"
 tap "homeport/tap"
+tap "mykolaharmash/git-jump"
 tap "shopify/shopify"
 tap "thezoraiz/ascii-image-converter"
 tap "weaveworks/tap"
@@ -55,6 +56,7 @@ brew "fluxcd/tap/flux"
 brew "fluxcd/tap/flux@2.0", link: false
 brew "fluxcd/tap/flux@2.1", link: false
 brew "fluxcd/tap/flux@2.2", link: false
+brew "mykolaharmash/git-jump/git-jump"
 brew "shopify/shopify/ejson"
 brew "thezoraiz/ascii-image-converter/ascii-image-converter"
 brew "weaveworks/tap/tfctl"
