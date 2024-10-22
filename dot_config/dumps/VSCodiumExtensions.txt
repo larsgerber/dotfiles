@@ -5,6 +5,7 @@ davidanson.vscode-markdownlint
 eamodio.gitlens
 editorconfig.editorconfig
 foxundermoon.shell-format
+franneck94.workspace-formatter
 github.copilot
 gitlab.gitlab-workflow
 golang.go
