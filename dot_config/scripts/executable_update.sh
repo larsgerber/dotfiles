@@ -65,18 +65,21 @@ VSCodiumExtensions=$HOME/.config/dumps/VSCodiumExtensions.txt
 HelmRepos=$HOME/.config/dumps/HelmRepos.txt
 HelmPlugins=$HOME/.config/dumps/HelmPlugins.txt
 KrewPlugins=$HOME/.config/dumps/KrewPlugins.txt
+GoTools=$HOME/.config/dumps/GoTools.txt
 
 brew bundle dump --force --file="$Brewfile".tmp
 codium --list-extensions >"$VSCodiumExtensions".tmp
 helm repo list | awk '{if (NR!=1) {print $1}}' >"$HelmRepos".tmp
 helm plugin list | awk '{if (NR!=1) {print $1}}' >"$HelmPlugins".tmp
 kubectl krew list >"$KrewPlugins".tmp
+go version -m ~/go/bin | awk '$1 ~ /mod/ {print $2 " " $3}' | column -t >"$GoTools".tmp
 
 (echo "$msg" && cat "$Brewfile".tmp) >"$Brewfile"
 (echo "$msg" && cat "$VSCodiumExtensions".tmp) >"$VSCodiumExtensions"
 (echo "$msg" && cat "$HelmRepos".tmp) >"$HelmRepos"
 (echo "$msg" && cat "$HelmPlugins".tmp) >"$HelmPlugins"
 (echo "$msg" && cat "$KrewPlugins".tmp) >"$KrewPlugins"
+(echo "$msg" && cat "$GoTools".tmp) >"$GoTools"
 
 rm "$HOME"/.config/*/*.tmp
 
