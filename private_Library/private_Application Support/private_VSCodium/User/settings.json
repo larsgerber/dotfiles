@@ -52,7 +52,7 @@
   },
   "[markdown]": {
     "files.trimTrailingWhitespace": false,
-    "editor.defaultFormatter": "DavidAnson.vscode-markdownlint"
+    "editor.defaultFormatter": "yzhang.markdown-all-in-one"
   },
   // Plugin: YAML
   "yaml.maxItemsComputed": 50000,
