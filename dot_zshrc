@@ -85,6 +85,9 @@ fpath+="${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src"
 # https://krew.sigs.k8s.io/docs/user-guide/setup/install/
 path+="${KREW_ROOT:-$HOME/.krew}/bin"
 
+# https://blog.luispa.dev/posts/how-to-install-go-using-zsh
+path+="${GOPATH:-$HOME/go}/bin"
+
 # -------------------------------------------------------------------
 # Custom functions
 # -------------------------------------------------------------------
@@ -113,6 +116,11 @@ function tabcolor {
   echo -n -e "\033]6;1;bg;red;brightness;$(jot -r 1 0 255)\a"
   echo -n -e "\033]6;1;bg;green;brightness;$(jot -r 1 0 255)\a"
   echo -n -e "\033]6;1;bg;blue;brightness;$(jot -r 1 0 255)\a"
+}
+
+# Subst
+function subst-helper {
+  $(git rev-parse --show-toplevel)/scripts/subst-helper.sh "$@"
 }
 
 # -------------------------------------------------------------------
