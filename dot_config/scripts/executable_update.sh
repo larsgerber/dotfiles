@@ -21,7 +21,7 @@ echo ""
 
 ~/.oh-my-zsh/tools/upgrade.sh -v minimal
 
-find ~/.oh-my-zsh/custom/plugins -maxdepth 2 -type d -name ".git" -exec sh -c 'echo && cd {}/.. && pwd && git pull 2> /dev/null' \;
+find ~/.oh-my-zsh/custom/plugins -maxdepth 2 -type d -name ".git" -exec sh -c 'echo && cd $1/.. && pwd && git pull 2> /dev/null' shell {} \;
 
 echo ""
 echo "=== VSCodium ==="
