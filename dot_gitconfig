@@ -25,3 +25,5 @@ path = .gitconfig-privat
 path = .gitconfig-privat
 [includeIf "gitdir:~/.local/share/"]
 path = .gitconfig-privat
+[push]
+	autoSetupRemote = true
