@@ -20,6 +20,7 @@ plugins=(
   fzf
   quick-look
   completions
+  company
 )
 
 # -------------------------------------------------------------------
@@ -37,11 +38,6 @@ alias gitpullall="find $HOME/Documents -maxdepth 4 -mindepth 1 -type d -name ".g
 alias zshconfig="vsc ~/.zshrc"
 alias ohmyzsh="vsc ~/.oh-my-zsh"
 alias update="~/.config/scripts/update.sh"
-alias tp="~/.config/scripts/teleport-app.sh"
-alias tshenv="~/.config/scripts/teleport-env.sh"
-alias tshamtool="~/.config/scripts/alertmanager.sh"
-alias tshpromtool="~/.config/scripts/prometheus.sh"
-alias gitlab-permalink="~/.config/scripts/gitlab-permalink.sh"
 alias moi=chezmoi
 alias moicd="cd $(chezmoi source-path)"
 alias kx="kubectx"
@@ -62,7 +58,6 @@ export ZSH_PLUGINS_ALIAS_TIPS_EXCLUDES="_ kubectl"
 export STARSHIP_CONFIG=~/.config/starship/starship.toml
 export KUBECOLOR_CONFIG=~/.config/kubecolor/color.yaml
 export K9S_CONFIG_DIR=~/.config/k9s
-export ARGOCD_ENV_kubernetes_api_ip="1"
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 export DFT_BYTE_LIMIT="2000000"
 
@@ -118,11 +113,6 @@ function tabcolor {
   echo -n -e "\033]6;1;bg;red;brightness;$(jot -r 1 0 255)\a"
   echo -n -e "\033]6;1;bg;green;brightness;$(jot -r 1 0 255)\a"
   echo -n -e "\033]6;1;bg;blue;brightness;$(jot -r 1 0 255)\a"
-}
-
-# Subst
-function subst-helper {
-  $(git rev-parse --show-toplevel)/scripts/subst-helper.sh "$@"
 }
 
 # -------------------------------------------------------------------
