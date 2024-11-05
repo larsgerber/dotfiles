@@ -10,6 +10,7 @@ gitlab.gitlab-workflow
 golang.go
 jbockle.jbockle-format-files
 mhutchie.git-graph
+mousavian.ssh-config-syntax-highlighter
 ms-azuretools.vscode-docker
 ms-kubernetes-tools.vscode-kubernetes-tools
 pkief.material-icon-theme

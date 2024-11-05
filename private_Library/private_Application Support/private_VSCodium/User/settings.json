@@ -46,7 +46,7 @@
     "*.river": "hcl",
     "inventory": "properties",
     ".env": "shellscript",
-    "**/.ssh/config*": "shellscript",
+    "**/.ssh/config*": "ssh-config",
     "*.ejson": "json",
     "hosts": "properties"
   },
