@@ -47,6 +47,7 @@
     "inventory": "properties",
     ".env": "shellscript",
     "**/.ssh/config*": "ssh-config",
+    "**/.kube/config": "yaml",
     "*.ejson": "json",
     "hosts": "properties"
   },
@@ -96,5 +97,9 @@
   "search.exclude": {
     "/var/**": true
   },
-  "editor.accessibilitySupport": "off"
+  "editor.accessibilitySupport": "off",
+  "github.gitProtocol": "ssh",
+  "material-icon-theme.files.associations": {
+    ".shellcheckrc": "yaml"
+  }
 }
