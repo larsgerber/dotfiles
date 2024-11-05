@@ -2,6 +2,7 @@
 bedag/admin-connect
 bedag/node-connect
 foreach
+resource-capacity
 stern
 view-cert
 view-secret
