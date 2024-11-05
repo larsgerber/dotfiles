@@ -64,17 +64,17 @@ context_pattern = "kind.*"
 style = "bold purple"
 
 [[kubernetes.contexts]]
-context_pattern = 'co-(?<cluster>.*dev.*)'
+context_pattern = '(.*ch|co)-(?<cluster>.*dev.*)'
 context_alias = "$cluster"
 style = "bold green"
 
 [[kubernetes.contexts]]
-context_pattern = 'co-(?<cluster>(.*test.*|.*stage.*))'
+context_pattern = '(.*ch|co)-(?<cluster>(.*test.*|.*stage.*))'
 context_alias = "$cluster"
 style = "bold yellow"
 
 [[kubernetes.contexts]]
-context_pattern = 'co-(?P<cluster>[\w-]+)'
+context_pattern = '(.*ch|co)-(?P<cluster>[\w-]+)'
 context_alias = "$cluster"
 style = "bold red"
 
