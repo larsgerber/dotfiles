@@ -43,6 +43,12 @@ echo ""
 kubectl krew upgrade
 
 echo ""
+echo "=== Go ==="
+echo ""
+
+go version -m ~/go/bin | awk '$1 ~ /path/ {print $2}' | xargs -I {} go install {}@latest
+
+echo ""
 echo "=== App Store ==="
 echo ""
 
