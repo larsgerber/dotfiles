@@ -1,94 +1,134 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-# Stolen from https://github.com/michaelfriderich :D
+writeBanner() {
+  echo -e "\n=== $1 ===\n"
+}
 
-echo ""
-echo "=== Brew ==="
-echo ""
+updateBrew() {
+  writeBanner "Brew"
+  export HOMEBREW_NO_ENV_HINTS=1
+  brew update
+  brew outdated
+  brew outdated --cask --greedy
+  brew upgrade
+  brew upgrade --cask --greedy
+  brew autoremove
+  brew cleanup --prune=0 --scrub
+}
 
-export HOMEBREW_NO_ENV_HINTS=1
-brew update
-brew outdated
-brew outdated --cask --greedy
-brew upgrade
-brew upgrade --cask --greedy
-brew autoremove
-brew cleanup --prune=0 --scrub
+updateOhMyZsh() {
+  writeBanner "Oh My Zsh"
+  ~/.oh-my-zsh/tools/upgrade.sh -v minimal
+  find ~/.oh-my-zsh/custom/plugins -maxdepth 2 -type d -name ".git" -exec sh -c \
+    'echo && cd $1/.. && pwd && git pull 2> /dev/null' shell {} \;
+}
 
-echo ""
-echo "=== Oh My Zsh ==="
-echo ""
+updateVSCodium() {
+  writeBanner "VSCodium"
+  codium --update-extensions
+}
 
-~/.oh-my-zsh/tools/upgrade.sh -v minimal
+updateHelm() {
+  writeBanner "Helm"
+  helm repo update
+  helm plugin list | awk 'NR > 1 {print $1}' | xargs -r helm plugin update
+}
 
-find ~/.oh-my-zsh/custom/plugins -maxdepth 2 -type d -name ".git" -exec sh -c 'echo && cd $1/.. && pwd && git pull 2> /dev/null' shell {} \;
+updateKrew() {
+  writeBanner "Krew"
+  kubectl krew upgrade
+}
 
-echo ""
-echo "=== VSCodium ==="
-echo ""
+updateGo() {
+  writeBanner "Go"
+  go version -m ~/go/bin | awk '$1 ~ /path/ {print $2}' | xargs -r -I {} go install {}@latest
+}
 
-codium --update-extensions
+updateAppStore() {
+  writeBanner "App Store"
+  mas outdated && mas upgrade
+}
 
-echo ""
-echo "=== Helm ==="
-echo ""
+updateMacOS() {
+  writeBanner "MacOS"
+  softwareupdate -l
+}
 
-helm repo update
-helm plugin list | awk '{if (NR!=1) {print $1}}' | xargs helm plugin update
+dumpConfigs() {
+  writeBanner "Dump configs"
 
-echo ""
-echo "=== Krew ==="
-echo ""
+  # Banner message
+  msg="# This file was generated using ~/.config/scripts/update.sh"
 
-kubectl krew upgrade
+  # Define file paths and corresponding commands in an associative array
+  declare -A dumps=(
+    ["$HOME/.config/brew/Brewfile"]="brew bundle dump --force --file=-"
+    ["$HOME/.config/dumps/VSCodiumExtensions.txt"]="codium --list-extensions"
+    ["$HOME/.config/dumps/HelmRepos.txt"]="helm repo list | awk 'NR > 1 {print \$1}'"
+    ["$HOME/.config/dumps/HelmPlugins.txt"]="helm plugin list | awk 'NR > 1 {print \$1}'"
+    ["$HOME/.config/dumps/KrewPlugins.txt"]="kubectl krew list"
+    ["$HOME/.config/dumps/GoTools.txt"]="go version -m ~/go/bin | awk '\$1 ~ /mod/ {print \$2 \" \" \$3}' | column -t"
+  )
 
-echo ""
-echo "=== Go ==="
-echo ""
+  # Execute each command and output to respective file with banner
+  for file in "${!dumps[@]}"; do
+    command="${dumps[$file]}"
+    echo "$msg" >"$file"
+    eval "$command" >>"$file"
+  done
+}
 
-go version -m ~/go/bin | awk '$1 ~ /path/ {print $2}' | xargs -I {} go install {}@latest
+help() {
+  echo "Usage: update.sh [OPTIONS]"
+  echo
+  echo "Options:"
+  echo "  --brew           Update Brew."
+  echo "  --ohmyzsh        Update OhMyZsh."
+  echo "  --vscodium       Update VSCodium extensions."
+  echo "  --helm           Update Helm repositorys and plugins."
+  echo "  --krew           Update Krew index and plugins."
+  echo "  --go             Update Go binaries in ~/go/bin."
+  echo "  --appstore       Update apps from AppStore."
+  echo "  --macos          Download MacOS updates."
+  echo "  --dump           Dump all configs."
+  echo "  --help           Display this help message and exit."
+  echo
+  echo "If no options are specified, every option is run."
+}
 
-echo ""
-echo "=== App Store ==="
-echo ""
+ALL=true
 
-mas outdated
-mas upgrade
+# Parse command-line arguments
+while [[ $# -gt 0 ]]; do
+  ALL=false
+  case "$1" in
+  --brew) updateBrew ;;
+  --ohmyzsh) updateOhMyZsh ;;
+  --vscodium) updateVSCodium ;;
+  --helm) updateHelm ;;
+  --krew) updateKrew ;;
+  --go) updateGo ;;
+  --appstore) updateAppStore ;;
+  --macos) updateMacOS ;;
+  --dump) dumpConfigs ;;
+  --help)
+    help
+    exit 0
+    ;;
+  *) echo "Unparsed arguments: $1" ;;
+  esac
+  shift
+done
 
-echo ""
-echo "=== Mac ==="
-echo ""
-
-softwareupdate -l
-
-echo ""
-echo "=== Dump configs ==="
-echo ""
-
-msg="# This file was generated using ~/.config/scripts/update.sh"
-Brewfile=$HOME/.config/brew/Brewfile
-VSCodiumExtensions=$HOME/.config/dumps/VSCodiumExtensions.txt
-HelmRepos=$HOME/.config/dumps/HelmRepos.txt
-HelmPlugins=$HOME/.config/dumps/HelmPlugins.txt
-KrewPlugins=$HOME/.config/dumps/KrewPlugins.txt
-GoTools=$HOME/.config/dumps/GoTools.txt
-
-brew bundle dump --force --file="$Brewfile".tmp
-codium --list-extensions >"$VSCodiumExtensions".tmp
-helm repo list | awk '{if (NR!=1) {print $1}}' >"$HelmRepos".tmp
-helm plugin list | awk '{if (NR!=1) {print $1}}' >"$HelmPlugins".tmp
-kubectl krew list >"$KrewPlugins".tmp
-go version -m ~/go/bin | awk '$1 ~ /mod/ {print $2 " " $3}' | column -t >"$GoTools".tmp
-
-(echo "$msg" && cat "$Brewfile".tmp) >"$Brewfile"
-(echo "$msg" && cat "$VSCodiumExtensions".tmp) >"$VSCodiumExtensions"
-(echo "$msg" && cat "$HelmRepos".tmp) >"$HelmRepos"
-(echo "$msg" && cat "$HelmPlugins".tmp) >"$HelmPlugins"
-(echo "$msg" && cat "$KrewPlugins".tmp) >"$KrewPlugins"
-(echo "$msg" && cat "$GoTools".tmp) >"$GoTools"
-
-rm "$HOME"/.config/*/*.tmp
-
-echo ""
-echo "Good, we're done"
-echo ""
+# Run all updates if no specific options are provided
+if [[ $ALL == true ]]; then
+  updateBrew
+  updateOhMyZsh
+  updateVSCodium
+  updateHelm
+  updateKrew
+  updateGo
+  updateAppStore
+  updateMacOS
+  dumpConfigs
+fi
