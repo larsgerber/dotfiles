@@ -36,7 +36,11 @@ updateHelm() {
 
 updateKrew() {
   writeBanner "Krew"
-  kubectl krew upgrade
+  if timeout 5s kubectl krew update; then
+    kubectl krew upgrade
+  else
+    echo "Failed to update Krew index, skipping ..."
+  fi
 }
 
 updateGo() {
@@ -62,7 +66,7 @@ dumpConfigs() {
 
   # Define file paths and corresponding commands in an associative array
   declare -A dumps=(
-    ["$HOME/.config/brew/Brewfile"]="brew bundle dump --force --file=-"
+    ["$HOME/.config/brew/Brewfile"]="brew bundle dump --no-upgrade --force --file=-"
     ["$HOME/.config/dumps/VSCodiumExtensions.txt"]="codium --list-extensions"
     ["$HOME/.config/dumps/HelmRepos.txt"]="helm repo list | awk 'NR > 1 {print \$1}'"
     ["$HOME/.config/dumps/HelmPlugins.txt"]="helm plugin list | awk 'NR > 1 {print \$1}'"
@@ -73,6 +77,7 @@ dumpConfigs() {
   # Execute each command and output to respective file with banner
   for file in "${!dumps[@]}"; do
     command="${dumps[$file]}"
+    echo "Dump $(basename "$file")"
     echo "$msg" >"$file"
     eval "$command" >>"$file"
   done
@@ -96,39 +101,43 @@ help() {
   echo "If no options are specified, every option is run."
 }
 
-ALL=true
+main() {
+  ALL=true
 
-# Parse command-line arguments
-while [[ $# -gt 0 ]]; do
-  ALL=false
-  case "$1" in
-  --brew) updateBrew ;;
-  --ohmyzsh) updateOhMyZsh ;;
-  --vscodium) updateVSCodium ;;
-  --helm) updateHelm ;;
-  --krew) updateKrew ;;
-  --go) updateGo ;;
-  --appstore) updateAppStore ;;
-  --macos) updateMacOS ;;
-  --dump) dumpConfigs ;;
-  --help)
-    help
-    exit 0
-    ;;
-  *) echo "Unparsed arguments: $1" ;;
-  esac
-  shift
-done
+  # Parse command-line arguments
+  while [[ $# -gt 0 ]]; do
+    ALL=false
+    case "$1" in
+    --brew) updateBrew ;;
+    --ohmyzsh) updateOhMyZsh ;;
+    --vscodium) updateVSCodium ;;
+    --helm) updateHelm ;;
+    --krew) updateKrew ;;
+    --go) updateGo ;;
+    --appstore) updateAppStore ;;
+    --macos) updateMacOS ;;
+    --dump) dumpConfigs ;;
+    --help)
+      help
+      exit 0
+      ;;
+    *) echo "Unparsed arguments: $1" ;;
+    esac
+    shift
+  done
 
-# Run all updates if no specific options are provided
-if [[ $ALL == true ]]; then
-  updateBrew
-  updateOhMyZsh
-  updateVSCodium
-  updateHelm
-  updateKrew
-  updateGo
-  updateAppStore
-  updateMacOS
-  dumpConfigs
-fi
+  # Run all updates if no specific options are provided
+  if [[ $ALL == true ]]; then
+    updateBrew
+    updateOhMyZsh
+    updateVSCodium
+    updateHelm
+    updateKrew
+    updateGo
+    updateAppStore
+    updateMacOS
+    dumpConfigs
+  fi
+}
+
+main "$@"
