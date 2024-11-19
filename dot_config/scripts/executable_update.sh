@@ -74,6 +74,9 @@ dumpConfigs() {
     ["$HOME/.config/dumps/GoTools.txt"]="go version -m ~/go/bin | awk '\$1 ~ /mod/ {print \$2 \" \" \$3}' | column -t"
   )
 
+  export HOMEBREW_NO_ENV_HINTS=1
+  export HOMEBREW_NO_AUTO_UPDATE=1
+
   # Execute each command and output to respective file with banner
   for file in "${!dumps[@]}"; do
     command="${dumps[$file]}"
