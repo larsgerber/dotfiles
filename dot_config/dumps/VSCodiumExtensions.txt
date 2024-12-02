@@ -1,5 +1,6 @@
 # This file was generated using ~/.config/scripts/update.sh
 adrianwilczynski.toggle-hidden
+aykutsarac.jsoncrack-vscode
 catppuccin.catppuccin-vsc
 davidanson.vscode-markdownlint
 eamodio.gitlens
