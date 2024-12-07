@@ -36,7 +36,7 @@ updateHelm() {
 
 updateKrew() {
   writeBanner "Krew"
-  if timeout 5s kubectl krew update; then
+  if timeout 5s kubectl krew update 2>/dev/null; then
     kubectl krew upgrade
   else
     echo "Failed to update Krew index, skipping ..."
@@ -66,16 +66,13 @@ dumpConfigs() {
 
   # Define file paths and corresponding commands in an associative array
   declare -A dumps=(
-    ["$HOME/.config/brew/Brewfile"]="brew bundle dump --no-upgrade --force --file=-"
+    ["$HOME/.config/brew/Brewfile"]="HOMEBREW_NO_AUTO_UPDATE=1 brew bundle dump --no-upgrade --force --file=-"
     ["$HOME/.config/dumps/VSCodiumExtensions.txt"]="codium --list-extensions"
     ["$HOME/.config/dumps/HelmRepos.txt"]="helm repo list | awk 'NR > 1 {print \$1}'"
     ["$HOME/.config/dumps/HelmPlugins.txt"]="helm plugin list | awk 'NR > 1 {print \$1}'"
     ["$HOME/.config/dumps/KrewPlugins.txt"]="kubectl krew list"
     ["$HOME/.config/dumps/GoTools.txt"]="go version -m ~/go/bin | awk '\$1 ~ /mod/ {print \$2 \" \" \$3}' | column -t"
   )
-
-  export HOMEBREW_NO_ENV_HINTS=1
-  export HOMEBREW_NO_AUTO_UPDATE=1
 
   # Execute each command and output to respective file with banner
   for file in "${!dumps[@]}"; do
