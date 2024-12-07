@@ -3,7 +3,6 @@ adrianwilczynski.toggle-hidden
 aykutsarac.jsoncrack-vscode
 catppuccin.catppuccin-vsc
 davidanson.vscode-markdownlint
-eamodio.gitlens
 editorconfig.editorconfig
 foxundermoon.shell-format
 github.copilot
@@ -11,6 +10,7 @@ gitlab.gitlab-workflow
 golang.go
 jbockle.jbockle-format-files
 mhutchie.git-graph
+mk12.better-git-line-blame
 mousavian.ssh-config-syntax-highlighter
 ms-azuretools.vscode-docker
 ms-kubernetes-tools.vscode-kubernetes-tools
