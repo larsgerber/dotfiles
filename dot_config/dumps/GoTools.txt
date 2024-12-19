@@ -1,6 +1,6 @@
 # This file was generated using ~/.config/scripts/update.sh
 github.com/prometheus/alertmanager  v0.27.0
 github.com/Shopify/ejson            v1.5.3
-golang.org/x/tools/gopls            v0.16.2
+golang.org/x/tools/gopls            v0.17.0
 honnef.co/go/tools                  v0.5.1
 github.com/bedag/subst              v1.0.0
