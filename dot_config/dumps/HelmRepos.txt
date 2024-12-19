@@ -1,3 +1,5 @@
 # This file was generated using ~/.config/scripts/update.sh
 argo
 cilium
+kyverno
+jetstack
