@@ -101,5 +101,6 @@
   "github.gitProtocol": "ssh",
   "material-icon-theme.files.associations": {
     ".shellcheckrc": "yaml"
-  }
+  },
+  "betterGitLineBlame.reblameOnSave": true
 }
