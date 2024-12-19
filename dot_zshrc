@@ -46,6 +46,7 @@ alias cil="cilium"
 alias watch="KUBECOLOR_FORCE_COLORS=true watch --color "
 alias rcat="$(which cat)"
 alias cat="$(which bat)"
+alias rls="$(which ls) -G"
 
 # -------------------------------------------------------------------
 # Variables
@@ -145,6 +146,12 @@ unset HISTFILE
 # -------------------------------------------------------------------
 
 eval "$(zoxide init zsh --cmd cd)"
+
+# -------------------------------------------------------------------
+# Initialize eza
+# -------------------------------------------------------------------
+
+alias ls="$(which eza)"
 
 # -------------------------------------------------------------------
 # Initialize Key Bindings
