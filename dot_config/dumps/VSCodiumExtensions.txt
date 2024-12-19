@@ -1,22 +1,22 @@
 # This file was generated using ~/.config/scripts/update.sh
-adrianwilczynski.toggle-hidden
-aykutsarac.jsoncrack-vscode
-catppuccin.catppuccin-vsc
-davidanson.vscode-markdownlint
-editorconfig.editorconfig
-foxundermoon.shell-format
-github.copilot
-gitlab.gitlab-workflow
-golang.go
-jbockle.jbockle-format-files
-mhutchie.git-graph
-mk12.better-git-line-blame
-mousavian.ssh-config-syntax-highlighter
-ms-azuretools.vscode-docker
-ms-kubernetes-tools.vscode-kubernetes-tools
-pkief.material-icon-theme
-redhat.vscode-yaml
-tamasfe.even-better-toml
-timonwong.shellcheck
-usernamehw.errorlens
-yzhang.markdown-all-in-one
+adrianwilczynski.toggle-hidden               1.0.2
+aykutsarac.jsoncrack-vscode                  2.0.3
+catppuccin.catppuccin-vsc                    3.15.2
+davidanson.vscode-markdownlint               0.57.0
+editorconfig.editorconfig                    0.16.6
+foxundermoon.shell-format                    7.2.5
+github.copilot                               1.245.1223
+gitlab.gitlab-workflow                       5.25.1
+golang.go                                    0.42.1
+jbockle.jbockle-format-files                 3.4.0
+mhutchie.git-graph                           1.30.0
+mk12.better-git-line-blame                   0.2.14
+mousavian.ssh-config-syntax-highlighter      0.0.5
+ms-azuretools.vscode-docker                  1.29.3
+ms-kubernetes-tools.vscode-kubernetes-tools  1.3.18
+pkief.material-icon-theme                    5.16.0
+redhat.vscode-yaml                           1.15.0
+tamasfe.even-better-toml                     0.21.0
+timonwong.shellcheck                         0.37.1
+usernamehw.errorlens                         3.21.0
+yzhang.markdown-all-in-one                   3.6.2
