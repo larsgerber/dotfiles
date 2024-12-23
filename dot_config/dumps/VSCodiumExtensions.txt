@@ -1,4 +1,5 @@
 # This file was generated using ~/.config/scripts/update.sh
+aaron-bond.better-comments                   3.0.2
 adrianwilczynski.toggle-hidden               1.0.2
 aykutsarac.jsoncrack-vscode                  2.0.3
 catppuccin.catppuccin-vsc                    3.15.2
