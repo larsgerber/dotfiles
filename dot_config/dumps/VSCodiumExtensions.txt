@@ -19,6 +19,6 @@ ms-kubernetes-tools.vscode-kubernetes-tools  1.3.18
 pkief.material-icon-theme                    5.16.0
 redhat.vscode-yaml                           1.15.0
 tamasfe.even-better-toml                     0.21.2
-timonwong.shellcheck                         0.37.1
+timonwong.shellcheck                         0.37.4
 usernamehw.errorlens                         3.22.0
 yzhang.markdown-all-in-one                   3.6.2
