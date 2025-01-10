@@ -1,3 +1,3 @@
 # yaml-language-server: $schema=https://github.com/kubecolor/kubecolor/raw/main/config-schema.json
 
-objFreshThreshold: "1m"
+objFreshThreshold: "3m"
