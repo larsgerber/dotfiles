@@ -102,5 +102,7 @@
   "material-icon-theme.files.associations": {
     ".shellcheckrc": "yaml"
   },
-  "betterGitLineBlame.reblameOnSave": true
+  "betterGitLineBlame.reblameOnSave": true,
+  "diffEditor.maxComputationTime": 0,
+  "diffEditor.maxFileSize": 0
 }
